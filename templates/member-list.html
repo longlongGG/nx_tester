@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../static/css/font.css">
+    <link rel="stylesheet" href="../static/css/xadmin.css">
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../static/js/xadmin.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body class="layui-anim layui-anim-up">
+    <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">演示</a>
+        <a>
+          <cite>导航元素</cite></a>
+      </span>
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+    <div class="x-body">
+      <xblock>
+        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+        <button class="layui-btn" onclick="x_admin_show('添加用户','member_add',600,400)"><i class="layui-icon"></i>添加</button>
+        <span class="x-right" style="line-height:40px">共有数据：{{ count_datas }} 条</span>
+      </xblock>
+
+      <table class="layui-table"><br>
+        <tr>
+          <tr>
+            <th>
+              <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+            </th>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>性别</th>
+            <th>手机</th>
+            <th>邮箱</th>
+            <th>地址</th>
+            <th>加入时间</th>
+
+            <th>操作</th></tr>
+            </tr>
+        </thead>
+
+        {% for user in user_data %}
+          <tr>
+
+            <td>
+              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+            </td>
+
+            <td>{{ user.user_id }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.sex }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.email}}</td>
+            <td>{{ user.adress}}</td>
+            <td>{{ user.create_time }}</td>
+
+
+            <td class="td-manage">
+
+
+              <a  title="编辑"  onclick="x_admin_show1('编辑','member_edit',600,400,{{ user.user_id }})"href="javascript:;">
+
+                <i class="layui-icon">&#xe642;</i>
+              </a>
+
+              <a title="删除" onclick="member_del(this,{{ user.user_id }})" href="javascript:;">
+                <i class="layui-icon">&#xe640;</i>
+              </a>
+            </td>
+
+
+
+          </tr>
+{% endfor %}
+
+        </tbody>
+
+      </table>
+      <div class="page">
+        <div>
+        <a class="prev" href="">&lt;&lt;</a>
+            {% if  data_count<= 1 %}
+
+                <a class="num" class="current" href="member_page?id=0">1</a>
+
+            {% else %}
+                {% for x in range(0,data_count) %}
+
+                <a class="num" href="member_page?id={{ x }}">{{ x+1 }}</a>
+
+                {% endfor %}
+                <a class="num" href="">{{ data_count }}</a>
+
+
+            {% endif %}
+        <a class="next" href="">&gt;&gt;</a>
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+    <script>
+      layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        
+        //执行一个laydate实例
+        laydate.render({
+          elem: '#start' //指定元素
+        });
+
+        //执行一个laydate实例
+        laydate.render({
+          elem: '#end' //指定元素
+        });
+      });
+
+       /*用户-停用*/
+      function member_stop(obj,id){
+          layer.confirm('确认要停用吗？',function(index){
+
+              if($(obj).attr('title')=='启用'){
+
+                //发异步把用户状态进行更改
+                $(obj).attr('title','停用')
+                $(obj).find('i').html('&#xe62f;');
+
+                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
+                layer.msg('已停用!',{icon: 5,time:1000});
+
+              }else{
+                $(obj).attr('title','启用')
+                $(obj).find('i').html('&#xe601;');
+
+                $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
+                layer.msg('已启用!',{icon: 5,time:1000});
+              }
+              
+          });
+      }
+
+      /*用户-删除*/
+      function member_del(obj,id){
+          layer.confirm('确认要删除吗？',function(index){
+              //发异步删除数据
+              id = {'id':id}
+              $.ajax({
+                    type: "post",
+                    url:"member_del",
+                    data:id,
+                    success:function (e){
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!',{icon:1,time:1000});
+                    }
+
+              })
+
+          });
+      }
+
+
+
+      function delAll (argument) {
+
+        var data = tableCheck.getData();
+  
+        layer.confirm('确认要删除吗？'+data,function(index){
+            //捉到所有被选中的，发异步进行删除
+            (index)
+            layer.msg('删除成功', {icon: 1});
+            $(".layui-form-checked").not('.header').parents('tr').remove();
+        });
+      }
+      function x_admin_show1(title,url,w,h,id){
+
+
+    if (title == null || title == '') {
+        title=false;
+    };
+    if (url == null || url == '') {
+        url="404.html";
+    };
+    if (w == null || w == '') {
+        w=($(window).width()*0.9);
+    };
+    if (h == null || h == '') {
+        h=($(window).height() - 50);
+    };
+    //(user_id)
+    ids = {'id':id}
+    $.ajax({
+        type: "post",
+        url:"member_edit",
+        data:ids,
+        success:function (e){
+            console.log(e)
+            layer.open({
+                type: 2,
+                area: [w+'px', h +'px'],
+                fix: false, //不固定
+                maxmin: true,
+                shadeClose: true,
+                shade:0.4,
+                title: title,
+                content: "member_edit",
+                success:function (layero,index){
+                    var body = layer.getChildFrame('body',index);
+                    var filedata = body.contents().find('#L_email').val(e.useremail)
+                    var filedata = body.contents().find('#L_username').val(e.username)
+                    var filedata = body.contents().find('#L_id').val(e.user_id)
+                }
+            });
+
+        }
+
+
+
+    })
+
+}
+    </script>
+
+  </body>
+
+</html>

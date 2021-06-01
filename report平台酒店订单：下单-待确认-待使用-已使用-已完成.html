@@ -1,0 +1,6070 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>测试报告</title>
+  <meta charset="utf-8" />
+  <style>@charset "UTF-8";
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* 外层轨道 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006pxrgba(255, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.yapi-run-auto-test {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+  font-size: 13px;
+  line-height: 25px;
+  color: #393838;
+  position: relative;
+}
+
+.yapi-run-auto-test table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse;
+}
+
+.yapi-run-auto-test td,
+th {
+  border: 1px solid #ddd;
+  padding: 3px 10px;
+}
+
+.yapi-run-auto-test th {
+  padding: 5px 10px;
+}
+
+.yapi-run-auto-test a, a:link, a:visited {
+  color: #34495e;
+  text-decoration: none;
+}
+
+.yapi-run-auto-test a:hover, a:focus {
+  color: #59d69d;
+  text-decoration: none;
+}
+
+.yapi-run-auto-test a img {
+  border: none;
+}
+
+.yapi-run-auto-test p {
+  padding-left: 10px;
+  margin-bottom: 9px;
+}
+
+.yapi-run-auto-test h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #404040;
+  line-height: 36px;
+}
+
+.yapi-run-auto-test h1 {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 32px;
+  padding-bottom: 16px;
+  line-height: 50px;
+}
+
+.yapi-run-auto-test h2 {
+  font-size: 28px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.yapi-run-auto-test h3 {
+  clear: both;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-left: 3px solid #59d69d;
+  padding-left: 8px;
+  font-size: 18px;
+}
+
+.yapi-run-auto-test h4 {
+  font-size: 16px;
+}
+
+.yapi-run-auto-test h5 {
+  font-size: 14px;
+}
+
+.yapi-run-auto-test h6 {
+  font-size: 13px;
+}
+
+.yapi-run-auto-test hr {
+  margin: 0 0 19px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.yapi-run-auto-test blockquote {
+  padding: 13px 13px 21px 15px;
+  margin-bottom: 18px;
+  font-family: georgia, serif;
+  font-style: italic;
+}
+
+.yapi-run-auto-test blockquote:before {
+  font-size: 40px;
+  margin-left: -10px;
+  font-family: georgia, serif;
+  color: #eee;
+}
+
+.yapi-run-auto-test blockquote p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.yapi-run-auto-test code,
+pre {
+  font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+
+.yapi-run-auto-test code {
+  background-color: #fee9cc;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 1px 3px;
+  font-size: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.yapi-run-auto-test pre {
+  display: block;
+  padding: 14px;
+  margin: 0 0 18px;
+  line-height: 16px;
+  font-size: 11px;
+  border: 1px solid #d9d9d9;
+  white-space: pre-wrap;
+  background: #f6f6f6;
+  overflow-x: auto;
+}
+
+.yapi-run-auto-test pre code {
+  background-color: #f6f6f6;
+  color: #737373;
+  font-size: 11px;
+  padding: 0;
+}
+
+.yapi-run-auto-test sup {
+  font-size: 0.83em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+* {
+  -webkit-print-color-adjust: exact;
+}
+
+@media print {
+  body,
+  code,
+  pre code,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+  }
+
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+
+.yapi-run-auto-test .menu-left {
+  position: fixed;
+  top: 61px;
+  left: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 260px;
+}
+
+.yapi-run-auto-test .menu-left > .list-content {
+  overflow: auto;
+  margin: 0px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8px 0 20px;
+}
+
+.yapi-run-auto-test .list {
+  padding: 2px 0px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding-right: 8px;
+}
+
+
+.yapi-run-auto-test .content-right {
+  max-width: 700px;
+  margin-left: 290px;
+  padding-left: 70px;
+  flex-grow: 1;
+}
+.yapi-run-auto-test .content-right h2:target {
+  padding-top: 80px;
+}
+
+.yapi-run-auto-test > p {
+  margin-left: 30px;
+}
+
+.yapi-run-auto-test > table {
+  margin-left: 30px;
+}
+
+.yapi-run-auto-test > pre {
+  margin-left: 30px;
+}
+
+.yapi-run-auto-test .curProject {
+  position: fixed;
+  top: 20px;
+  font-size: 25px;
+  color: black;
+  margin-left: -240px;
+  width: 240px;
+  padding: 5px;
+  line-height: 25px;
+  box-sizing: border-box;
+}
+
+.yapi-run-auto-test .g-doc {
+  margin-top: 56px;
+  padding-top: 24px;
+  display: flex;
+}
+
+.yapi-run-auto-test .curproject-name {
+  font-size: 42px;
+}
+
+.yapi-run-auto-test .m-header {
+  background: #32363a;
+  height: 56px;
+  line-height: 56px;
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.yapi-run-auto-test .m-header .title {
+  font-size: 22px;
+  color: #fff;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  margin-left: 16px;
+  padding: 0;
+  line-height: 56px;
+  border: none;
+}
+.yapi-run-auto-test .m-header .nav {
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  right: 32px;
+  top: 0;
+}
+.yapi-run-auto-test .m-header .nav a {
+  color: #fff;
+  margin-left: 16px;
+  padding: 8px;
+  transition: color .2s;
+}
+.yapi-run-auto-test .m-header .nav a:hover {
+  color: #59d69d;
+}
+
+.yapi-run-auto-test .m-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.yapi-run-auto-test .row{
+  position: relative;
+  height: auto;
+  zoom: 1;
+  display: block;
+  box-sizing: border-box;
+}
+
+.yapi-run-auto-test .case-report {
+  margin: 10px;
+  display: flex;
+}
+
+.yapi-run-auto-test .case-report .case-report-title {
+  font-size: 14px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.yapi-run-auto-test .col-3 {
+  display: block;
+  box-sizing: border-box;
+  width: 12.5%;
+}
+
+.yapi-run-auto-test .col-21 {
+  display: block;
+  box-sizing: border-box;
+  width: 87.5%;
+}
+
+.yapi-run-auto-test .icon {
+  display: inline-block;
+  font-style: normal;
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: none;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.yapi-run-auto-test .icon-check-circle:before {
+  content: "\2713";
+}
+
+.yapi-run-auto-test .icon-close-circle:before {
+  content: "\2715";
+}
+
+.yapi-run-auto-test .icon-warning-circle:before {
+  content: "!";
+}
+
+.yapi-run-auto-test .icon:before {
+  display: block;
+  font-family: "anticon" !important;
+}
+
+.yapi-run-auto-test .summary {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  font-size: 18px;
+}
+
+.yapi-run-auto-test .success{
+  color: #208054;
+  font-weight: 700;
+
+}
+
+.yapi-run-auto-test .status {
+  flex-shrink: 0;
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 2px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yapi-run-auto-test .status-ok {
+  background-color: #17c5a6;
+}
+
+
+
+.yapi-run-auto-test .status-ko {
+  background-color: #fd3c3c;
+}
+
+.yapi-run-auto-test .status-warning {
+  background-color: #ffb74c;
+}
+
+/*# sourceMappingURL=defaultTheme.css.map */
+</style>
+  </head>
+  <body class="yapi-run-auto-test">
+    <div class="m-header">
+      <a href="#" style="display: inherit;"><svg class="svg" width="32px" height="32px" viewBox="0 0 64 64" version="1.1"><title>Icon</title><desc>Created with Sketch.</desc><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1"><stop stop-color="#FFFFFF" offset="0%"></stop><stop stop-color="#F2F2F2" offset="100%"></stop></linearGradient><circle id="path-2" cx="31.9988602" cy="31.9988602" r="2.92886048"></circle><filter x="-85.4%" y="-68.3%" width="270.7%" height="270.7%" filterUnits="objectBoundingBox" id="filter-3"><feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.159703351 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix></filter></defs><g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="大屏幕"><g id="Icon"><circle id="Oval-1" fill="url(#linearGradient-1)" cx="32" cy="32" r="32"></circle><path d="M36.7078009,31.8054514 L36.7078009,51.7110548 C36.7078009,54.2844537 34.6258634,56.3695395 32.0579205,56.3695395 C29.4899777,56.3695395 27.4099998,54.0704461 27.4099998,51.7941246 L27.4099998,31.8061972 C27.4099998,29.528395 29.4909575,27.218453 32.0589004,27.230043 C34.6268432,27.241633 36.7078009,29.528395 36.7078009,31.8054514 Z" id="blue" fill="#2359F1" fill-rule="nonzero"></path><path d="M45.2586091,17.1026914 C45.2586091,17.1026914 45.5657231,34.0524383 45.2345291,37.01141 C44.9033351,39.9703817 43.1767091,41.6667796 40.6088126,41.6667796 C38.040916,41.6667796 35.9609757,39.3676862 35.9609757,37.0913646 L35.9609757,17.1034372 C35.9609757,14.825635 38.0418959,12.515693 40.6097924,12.527283 C43.177689,12.538873 45.2586091,14.825635 45.2586091,17.1026914 Z" id="green" fill="#57CF27" fill-rule="nonzero" transform="translate(40.674608, 27.097010) rotate(60.000000) translate(-40.674608, -27.097010) "></path><path d="M28.0410158,17.0465598 L28.0410158,36.9521632 C28.0410158,39.525562 25.9591158,41.6106479 23.3912193,41.6106479 C20.8233227,41.6106479 18.7433824,39.3115545 18.7433824,37.035233 L18.7433824,17.0473055 C18.7433824,14.7695034 20.8243026,12.4595614 23.3921991,12.4711513 C25.9600956,12.4827413 28.0410158,14.7695034 28.0410158,17.0465598 Z" id="red" fill="#FF561B" fill-rule="nonzero" transform="translate(23.392199, 27.040878) rotate(-60.000000) translate(-23.392199, -27.040878) "></path><g id="inner-round"><use fill="black" fill-opacity="1" filter="url(#filter-3)" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#path-2"></use><use fill="#F7F7F7" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#path-2"></use></g></g></g></g></svg></a>
+      <a href="#"><h1 class="title">YAPI 测试结果文档</h1></a>
+      <div class="nav">
+        <a href="https://hellosean1025.github.io/yapi">YApi</a>
+      </div>
+    </div>
+    <div class="g-doc">
+      <div class="menu-left">
+        
+  <div class="list-content">
+    <a class="list" href="#0">创建临时用户/new</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#1">辖下景区Select列表</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#2">标签编号查询(小程序)</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#3">酒店列表-住宿类-channel-new</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#4">产品详情</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#5">酒店详情-推荐套餐列表-channel</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#6">产品详情-推荐产品列表-channel</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#7">获取评价列表</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#8">获取当前景区信息</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#9">获取商品预定须知</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#10">获取商品价格-住宿</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#11">根据产品id查询是否有优惠或电子券</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#12">获取商品预定规则</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#13">新增会员的出行人信息</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#14">/查询用户的以往出行人列表</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#15">酒店下单接口</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#16">获取商品价格-住宿获取价格</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#17">快捷支付</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#18">微信支付成功回调</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#19">刷新当前用户在线</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#20">applet订单详情</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#21">获取商品退改规则-是否可退-new</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#22">根据订单类型返回反馈内容</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#23">手机密码登录</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#24">App订单详情</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#25">整单核销</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+  <div class="list-content">
+    <a class="list" href="#26">酒店操作确认 1-房源确认 2-确认入住 3-确认离店</a>
+    <div title="验证通过" class="status status-ok"><i class="icon icon-check-circle"></i></div>
+  </div>
+  
+      </div>
+      <div id="right" class="content-right">
+      <h1>YApi 测试报告</h1>
+      <div class="summary"><div>一共 <span class="success">27</span> 测试用例， 全部验证通过(13.25s)</div></div>
+      
+  <div>
+    <h2 id=0>创建临时用户/new</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/member-v1/member/temp/new</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/member-v1/member/temp/new</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/x-www-form-urlencoded",
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9TME8yNUN2YXdzbGk2VkotMUZzNm0yR01hMTgiLCJhdWQiOiIxMTY2MSIsImlhdCI6MTYwNjgwNzYxOSwiZXhwIjoxNjE0MDA3NjE5fQ.FHxlzYAVuLFsbjG8jCP7EEZGI1n9Q5zyJFFGHXDeIs8UVX0nmfoIwjRxdDqFfbnSc2BKbRpDTKF7AuC4nryfFA",
+   "company_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:02 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "country": "中国",
+      "companyId": 1,
+      "gender": 1,
+      "headImg": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJta9bnBia3qIdSGzwcib1VFXacQF2RfQTSUH7RT85t7MKSiaaJj6ACMDoDMQ8ApS0hZjETCrfRung1Q/132",
+      "province": "北京",
+      "city": "北京",
+      "comeFrom": "巴松措",
+      "nickname": "测试-4819370",
+      "name": "测试-4819370",
+      "id": 4831080,
+      "token": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA"
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=1>辖下景区Select列表</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/cms-v1/scenicArea/getScenicAreaSelectList</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/cms-v1/scenicArea/getScenicAreaSelectList?scenicAreaId=&companyId=</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:02 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": [
+      {
+         "label": "楠溪江",
+         "value": -1
+      },
+      {
+         "label": "丽水古街",
+         "value": 17
+      },
+      {
+         "label": "芙蓉古村",
+         "value": 18
+      },
+      {
+         "label": "苍坡古村",
+         "value": 19
+      },
+      {
+         "label": "太平岩",
+         "value": 20
+      },
+      {
+         "label": "龙爆仙洞",
+         "value": 21
+      }
+   ]
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=2>标签编号查询(小程序)</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/cms-v1/tag/findNoListPost</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/cms-v1/tag/findNoListPost</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/x-www-form-urlencoded",
+   "member_id": "1",
+   "company_id": "1",
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>nos=PD-HT-02%2CPD-HT-03</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:02 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "PD-HT-03": [
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/12/15 18:19:48",
+            "scenicAreaId": -1,
+            "id": 156,
+            "tierId": 26,
+            "name": "洗衣机",
+            "num": 2,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 157,
+            "tierId": 26,
+            "name": "电脑",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 158,
+            "tierId": 26,
+            "name": "电视",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/11/25 14:36:53",
+            "scenicAreaId": -1,
+            "id": 159,
+            "tierId": 26,
+            "name": "WIFI",
+            "num": 1,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/11/25 10:08:43",
+            "scenicAreaId": -1,
+            "id": 160,
+            "tierId": 26,
+            "name": "免费停车",
+            "num": 1,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/11/25 10:08:43",
+            "scenicAreaId": -1,
+            "id": 161,
+            "tierId": 26,
+            "name": "免费洗衣服",
+            "num": 1,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/11/25 10:08:43",
+            "scenicAreaId": -1,
+            "id": 162,
+            "tierId": 26,
+            "name": "电冰箱",
+            "num": 1,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/11/25 10:08:43",
+            "scenicAreaId": -1,
+            "id": 163,
+            "tierId": 26,
+            "name": "自行车",
+            "num": 1,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 164,
+            "tierId": 26,
+            "name": "吹风机",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 165,
+            "tierId": 26,
+            "name": "拖鞋",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 166,
+            "tierId": 26,
+            "name": "灭蚊器",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 167,
+            "tierId": 26,
+            "name": "电脑1",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 168,
+            "tierId": 26,
+            "name": "吹风机2",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 169,
+            "tierId": 26,
+            "name": "台灯",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/12/15 18:19:48",
+            "scenicAreaId": -1,
+            "id": 170,
+            "tierId": 26,
+            "name": "浴室化妆放大镜",
+            "num": 3,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/11/25 10:08:43",
+            "scenicAreaId": -1,
+            "id": 171,
+            "tierId": 26,
+            "name": "24小时热水",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 172,
+            "tierId": 26,
+            "name": "独立淋浴间",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 173,
+            "tierId": 26,
+            "name": "286V电压插座",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 174,
+            "tierId": 26,
+            "name": "免费WIFI",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 175,
+            "tierId": 26,
+            "name": "停车场",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 176,
+            "tierId": 26,
+            "name": "浴巾",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 177,
+            "tierId": 26,
+            "name": "电吹风",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 178,
+            "tierId": 26,
+            "name": "游泳池",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 179,
+            "tierId": 26,
+            "name": "露天阳台",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": null,
+            "creatorName": null,
+            "updatorName": null,
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/09/16 14:43:42",
+            "scenicAreaId": -1,
+            "id": 180,
+            "tierId": 26,
+            "name": "接送服务",
+            "num": 0,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": 2,
+            "updatorId": 1,
+            "creatorName": "楠溪江租户管理员",
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/19 13:59:54",
+            "updateTime": "2020/11/25 14:36:53",
+            "scenicAreaId": -1,
+            "id": 695,
+            "tierId": 26,
+            "name": "高配兰博基尼",
+            "num": 2,
+            "attribute": 3,
+            "state": 1
+         }
+      ],
+      "PD-HT-02": [
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 2,
+            "creatorName": null,
+            "updatorName": "楠溪江租户管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/10/21 10:02:09",
+            "scenicAreaId": -1,
+            "id": 151,
+            "tierId": 25,
+            "name": "浪漫情侣",
+            "num": 1,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/12/21 11:09:45",
+            "scenicAreaId": -1,
+            "id": 152,
+            "tierId": 25,
+            "name": "休闲度假",
+            "num": 2,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/12/21 10:29:40",
+            "scenicAreaId": -1,
+            "id": 153,
+            "tierId": 25,
+            "name": "亲子酒店",
+            "num": 1,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/12/21 11:09:58",
+            "scenicAreaId": -1,
+            "id": 154,
+            "tierId": 25,
+            "name": "商务出行",
+            "num": 4,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": null,
+            "updatorId": 1,
+            "creatorName": null,
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/16 14:43:42",
+            "updateTime": "2020/12/21 11:09:58",
+            "scenicAreaId": -1,
+            "id": 155,
+            "tierId": 25,
+            "name": "网红酒店",
+            "num": 5,
+            "attribute": 3,
+            "state": 1
+         },
+         {
+            "isdelete": 1,
+            "version": 1,
+            "companyId": 1,
+            "creatorId": 2,
+            "updatorId": 1,
+            "creatorName": "楠溪江租户管理员",
+            "updatorName": "系统管理员",
+            "createTime": "2020/09/19 14:00:12",
+            "updateTime": "2020/12/21 11:09:58",
+            "scenicAreaId": -1,
+            "id": 696,
+            "tierId": 25,
+            "name": "90后专属",
+            "num": 4,
+            "attribute": 3,
+            "state": 1
+         }
+      ]
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=3>酒店列表-住宿类-channel-new</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/goods-v1/applet/goods/list/stay/new</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/goods-v1/applet/goods/list/stay/new</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "channelId": "9001",
+   "company_id": "1",
+   "member_id": "1{",
+   "Content-Type": "application/json"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "activityList": [],
+   "distanceSort": 0,
+   "distributorMobile": "",
+   "endDate": "2021-12-12",
+   "facilitiesList": [],
+   "goodsStayTypeList": [],
+   "keyWords": "",
+   "latitude": "40.042396545410156",
+   "longitude": "116.35063934326172",
+   "offset": 1,
+   "pageSize": 6,
+   "poiId": 0,
+   "position": 0,
+   "predefinedList": [],
+   "priceEnd": 0,
+   "priceSort": 0,
+   "priceStart": 0,
+   "roomBreakfastTypeList": [],
+   "roomTypeList": [],
+   "saleSort": 0,
+   "scenicId": 0,
+   "scoreSort": 0,
+   "startDate": "{ @now | substr : 0 , 10 }}",
+   "stayLevel": 0,
+   "themeList": []
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:05 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "records": [
+         {
+            "goodsId": 134,
+            "thumbnail": "http://tx.enn.cn/group1/M00/02/7D/CiaAUl889O6AA6D-AAGmcNcQ0II58.jpeg",
+            "poiId": 347,
+            "goodsName": "丽水街酒店",
+            "projectId": 3,
+            "projectName": "住宿",
+            "scenicId": 17,
+            "scenicName": "丽水古街",
+            "synopsis": "WAERFG",
+            "labels": [
+               "休闲度假",
+               "商务出行",
+               "网红酒店"
+            ],
+            "activityNames": null,
+            "groupNames": null,
+            "price": 0.01,
+            "distributorPrice": null,
+            "activityPrice": null,
+            "marketPrice": null,
+            "showPrice": 70.78,
+            "scribingPrice": 89.78,
+            "sortPrice": 1,
+            "saleNumber": null,
+            "longitude": "120.741556",
+            "latitude": "28.343006",
+            "distance": "1361650.9639171192",
+            "stayLevel": 6,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": 0,
+            "stayLevelLabel": null,
+            "stayThemeLabel": "休闲度假,商务出行,网红酒店",
+            "goodsLabel": null,
+            "goodsExtendSize": 3
+         },
+         {
+            "goodsId": 4,
+            "thumbnail": "http://tx.enn.cn/group1/M00/02/3A/CiaAUl8VLA2AK4FZAAVASBlJnhU855.jpg",
+            "poiId": 351,
+            "goodsName": "丽水古街大酒店",
+            "projectId": 3,
+            "projectName": "住宿",
+            "scenicId": 17,
+            "scenicName": "丽水古街",
+            "synopsis": "测试退款",
+            "labels": null,
+            "activityNames": null,
+            "groupNames": null,
+            "price": 0.01,
+            "distributorPrice": null,
+            "activityPrice": null,
+            "marketPrice": null,
+            "showPrice": 12,
+            "scribingPrice": null,
+            "sortPrice": 1,
+            "saleNumber": null,
+            "longitude": "120.73959",
+            "latitude": "28.347202",
+            "distance": "1361149.3915728142",
+            "stayLevel": 6,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": 0,
+            "stayLevelLabel": null,
+            "stayThemeLabel": null,
+            "goodsLabel": null,
+            "goodsExtendSize": 1
+         },
+         {
+            "goodsId": 6,
+            "thumbnail": "http://tx.enn.cn/group1/M00/01/E4/CiaAUl7bSwGAHQbUAAFIUeTySFg11.jpeg",
+            "poiId": 312,
+            "goodsName": "龙爆仙洞国际大酒店",
+            "projectId": 3,
+            "projectName": "住宿",
+            "scenicId": -1,
+            "scenicName": "楠溪江",
+            "synopsis": "楠溪江位于浙江省温州市北部的永嘉县境内，南距温州市",
+            "labels": [
+               "网红酒店",
+               "90后专属"
+            ],
+            "activityNames": null,
+            "groupNames": null,
+            "price": 0.01,
+            "distributorPrice": null,
+            "activityPrice": null,
+            "marketPrice": null,
+            "showPrice": 30.1,
+            "scribingPrice": null,
+            "sortPrice": 1,
+            "saleNumber": null,
+            "longitude": "120.710785",
+            "latitude": "28.30149",
+            "distance": "1365260.9763274246",
+            "stayLevel": 7,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": 0,
+            "stayLevelLabel": null,
+            "stayThemeLabel": "网红酒店,90后专属",
+            "goodsLabel": null,
+            "goodsExtendSize": 1
+         },
+         {
+            "goodsId": 7,
+            "thumbnail": "http://tx.enn.cn/group1/M00/01/E4/CiaAUl7bVZWABS8BADGZKDDF0lA561.jpg",
+            "poiId": 307,
+            "goodsName": "Glory-2",
+            "projectId": 3,
+            "projectName": "住宿",
+            "scenicId": 17,
+            "scenicName": "丽水古街",
+            "synopsis": "金丝楠木大床",
+            "labels": null,
+            "activityNames": null,
+            "groupNames": null,
+            "price": 0.01,
+            "distributorPrice": null,
+            "activityPrice": null,
+            "marketPrice": null,
+            "showPrice": 0.01,
+            "scribingPrice": null,
+            "sortPrice": 1,
+            "saleNumber": null,
+            "longitude": "116.35613",
+            "latitude": "40.046968",
+            "distance": "690.5393769591201",
+            "stayLevel": 7,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": 0,
+            "stayLevelLabel": null,
+            "stayThemeLabel": "",
+            "goodsLabel": null,
+            "goodsExtendSize": 1
+         },
+         {
+            "goodsId": 8,
+            "thumbnail": "http://tx.enn.cn/group1/M00/01/E4/CiaAUl7bVxGANYWFACs4QlTBzQs690.jpg",
+            "poiId": 307,
+            "goodsName": "Glory-3",
+            "projectId": 3,
+            "projectName": "住宿",
+            "scenicId": -1,
+            "scenicName": "楠溪江",
+            "synopsis": "glory",
+            "labels": null,
+            "activityNames": null,
+            "groupNames": null,
+            "price": 0.01,
+            "distributorPrice": null,
+            "activityPrice": null,
+            "marketPrice": null,
+            "showPrice": 666666,
+            "scribingPrice": null,
+            "sortPrice": 1,
+            "saleNumber": null,
+            "longitude": "116.35613",
+            "latitude": "40.046968",
+            "distance": "690.5393769591201",
+            "stayLevel": 7,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": 0,
+            "stayLevelLabel": null,
+            "stayThemeLabel": "",
+            "goodsLabel": null,
+            "goodsExtendSize": 1
+         },
+         {
+            "goodsId": 16,
+            "thumbnail": "http://tx.enn.cn/group1/M00/01/E5/CiaAUl7c1vyAL9NMAH_5d6qLOsc421.jpg,http://tx.enn.cn/group1/M00/01/E5/CiaAUl7c1vuAJ8hJAACffGQcLV097.jpeg",
+            "poiId": 312,
+            "goodsName": "测试平台酒店",
+            "projectId": 3,
+            "projectName": "住宿",
+            "scenicId": 21,
+            "scenicName": "龙爆仙洞",
+            "synopsis": "2134567890",
+            "labels": [
+               "网红酒店",
+               "90后专属",
+               "商务出行"
+            ],
+            "activityNames": null,
+            "groupNames": null,
+            "price": 0.01,
+            "distributorPrice": null,
+            "activityPrice": null,
+            "marketPrice": null,
+            "showPrice": 20.01,
+            "scribingPrice": null,
+            "sortPrice": 1,
+            "saleNumber": null,
+            "longitude": "120.710785",
+            "latitude": "28.30149",
+            "distance": "1365260.9763274246",
+            "stayLevel": 6,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": 0,
+            "stayLevelLabel": null,
+            "stayThemeLabel": "网红酒店,90后专属,商务出行",
+            "goodsLabel": null,
+            "goodsExtendSize": 1
+         }
+      ],
+      "offset": 1,
+      "pageSize": 6
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=4>产品详情</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/goods-v1/applet/goods/detail</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/goods-v1/applet/goods/detail?goodsId=134&distributorMobile=&endDate=2021-12-12&startDate=2021-01-04%2000%3A00%3A00</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "channelId": "9001",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:07 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "id": 134,
+      "projectId": 3,
+      "poiId": 347,
+      "poiAddress": "温州",
+      "goodsStatus": 1,
+      "scenicId": 17,
+      "thirdParty": null,
+      "thirdProductId": "",
+      "showPicture": [
+         "http://tx.enn.cn/group1/M00/02/7D/CiaAUl889OmAMe2QAAEyUy8qdzs05.jpeg"
+      ],
+      "thumbnail": "http://tx.enn.cn/group1/M00/02/7D/CiaAUl889O6AA6D-AAGmcNcQ0II58.jpeg",
+      "video": "",
+      "voice": "",
+      "goodsName": "丽水街酒店",
+      "scenicName": "丽水古街",
+      "synopsis": "WAERFG",
+      "operationStartDate": "08:00",
+      "operationEndDate": "18:00",
+      "operationUser": null,
+      "operationUserPhone": null,
+      "serviceTelephone": "18211051922",
+      "goodsExtendListAppDTOS": [
+         {
+            "id": 251,
+            "goodsExtendCode": "0001",
+            "goodsExtendName": "标准间",
+            "salePrice": 100.9,
+            "distributorPrice": null,
+            "marketPrice": "9088700",
+            "showPrice": 81.9,
+            "scribingPrice": 100.9,
+            "groupPrice": null,
+            "activityPrice": 81.9,
+            "specificationRefinement": -1,
+            "activityNames": null,
+            "predefinedRuleAppDTO": {
+               "id": 933,
+               "goodsExtendId": 251,
+               "predefinedDay": -1,
+               "predefinedLimitType": 1,
+               "predefinedLimitDay": 0,
+               "predefinedLimitTime": "23:59",
+               "orderNumberType": 1,
+               "orderNumberLess": 0,
+               "orderNumberMore": 0,
+               "purchaseType": 1,
+               "purchaseLimitPhone": "1",
+               "purchaseLimitDay": 0,
+               "purchaseLimitNumber": 0,
+               "purchaseLimitType": 1,
+               "realName": 2,
+               "extendShowPicture": null,
+               "extendThumbnail": null
+            },
+            "predefinedRuleDesc": null,
+            "refundRuleDTO": {
+               "id": 937,
+               "goodsExtendId": 251,
+               "refundRuleType": 2,
+               "refundVerify": 1,
+               "refundDay": null,
+               "refundHour": null,
+               "refundMinute": null,
+               "refundCostType": 1,
+               "baseCharging": 0,
+               "baseChargingType": 1,
+               "beforePlayCharging": null,
+               "beforeChargingInfos": null,
+               "overdueType": 1
+            },
+            "refundRuleDesc": "有条件退",
+            "validityVerificationDTO": {
+               "id": 937,
+               "goodsExtendId": 251,
+               "validityType": 1,
+               "orderDay": null,
+               "ticketDay": null,
+               "beforeReserveDay": 0,
+               "afterReserveDay": 0,
+               "validityStartDate": "",
+               "validityEndDate": "",
+               "validityAfterReserve": 2,
+               "admissionRule": 1,
+               "delayVerificationType": 1,
+               "delayHour": null,
+               "delayMinutes": null
+            },
+            "validityVerificationDesc": "预定日期当天有效",
+            "predefinedInstructions": "撒旦法",
+            "refundExplanation": "挖二等分",
+            "goodsExtendPackageAppDTOS": null,
+            "showPicture": "http://travel.enn.cn/group1/M00/02/7D/CiaAUl889S-Afgs5AAFN3rBnMLU965.png",
+            "thumbnail": "http://travel.enn.cn/group1/M00/02/7D/CiaAUl889UiAJDwaAAETQKadw-E537.jpg",
+            "roomArea": 12,
+            "bedType": 1,
+            "bedTypeName": "单人床",
+            "bedInfos": [
+               {
+                  "bedType": 1,
+                  "bedTypeName": "单人床",
+                  "bedWidth": "23",
+                  "bedNumber": 6
+               }
+            ],
+            "breakfastType": 1,
+            "breakfastNumber": 23,
+            "breakfastTypeName": "无",
+            "stock": 5000,
+            "canSale": true,
+            "couponNames": [],
+            "guideTime": null,
+            "extendShowPicture": null,
+            "extendThumbnail": null,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": null
+         },
+         {
+            "id": 467,
+            "goodsExtendCode": "0002",
+            "goodsExtendName": "豪华间",
+            "salePrice": 89.78,
+            "distributorPrice": null,
+            "marketPrice": "678900",
+            "showPrice": 70.78,
+            "scribingPrice": 89.78,
+            "groupPrice": null,
+            "activityPrice": 70.78,
+            "specificationRefinement": -1,
+            "activityNames": null,
+            "predefinedRuleAppDTO": {
+               "id": 1141,
+               "goodsExtendId": 467,
+               "predefinedDay": -1,
+               "predefinedLimitType": 1,
+               "predefinedLimitDay": 0,
+               "predefinedLimitTime": "23:59",
+               "orderNumberType": 1,
+               "orderNumberLess": 0,
+               "orderNumberMore": 0,
+               "purchaseType": 1,
+               "purchaseLimitPhone": "1",
+               "purchaseLimitDay": 0,
+               "purchaseLimitNumber": 0,
+               "purchaseLimitType": 1,
+               "realName": 2,
+               "extendShowPicture": null,
+               "extendThumbnail": null
+            },
+            "predefinedRuleDesc": null,
+            "refundRuleDTO": {
+               "id": 1153,
+               "goodsExtendId": 467,
+               "refundRuleType": 4,
+               "refundVerify": 2,
+               "refundDay": null,
+               "refundHour": null,
+               "refundMinute": null,
+               "refundCostType": 1,
+               "baseCharging": 0,
+               "baseChargingType": 1,
+               "beforePlayCharging": null,
+               "beforeChargingInfos": null,
+               "overdueType": 1
+            },
+            "refundRuleDesc": "随时退",
+            "validityVerificationDTO": {
+               "id": 1153,
+               "goodsExtendId": 467,
+               "validityType": 1,
+               "orderDay": null,
+               "ticketDay": null,
+               "beforeReserveDay": 0,
+               "afterReserveDay": 0,
+               "validityStartDate": "",
+               "validityEndDate": "",
+               "validityAfterReserve": 2,
+               "admissionRule": 1,
+               "delayVerificationType": 1,
+               "delayHour": null,
+               "delayMinutes": null
+            },
+            "validityVerificationDesc": "预定日期当天有效",
+            "predefinedInstructions": "阿斯蒂芬",
+            "refundExplanation": "WAESDFG ",
+            "goodsExtendPackageAppDTOS": null,
+            "showPicture": "http://tx.enn.cn/group1/M00/03/19/CiaAUl-8yOGAVWAGAAE9m_XWHLo480.jpg",
+            "thumbnail": "http://tx.enn.cn/group1/M00/03/19/CiaAUl-8yOWAEY3hAAJCide4oJU600.jpg",
+            "roomArea": 2.3,
+            "bedType": 1,
+            "bedTypeName": "单人床",
+            "bedInfos": [
+               {
+                  "bedType": 1,
+                  "bedTypeName": "单人床",
+                  "bedWidth": "12",
+                  "bedNumber": 1
+               }
+            ],
+            "breakfastType": 1,
+            "breakfastNumber": null,
+            "breakfastTypeName": "无",
+            "stock": 34,
+            "canSale": true,
+            "couponNames": [],
+            "guideTime": null,
+            "extendShowPicture": null,
+            "extendThumbnail": null,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": null
+         },
+         {
+            "id": 468,
+            "goodsExtendCode": "0003",
+            "goodsExtendName": "总统套房",
+            "salePrice": 236,
+            "distributorPrice": null,
+            "marketPrice": "443500",
+            "showPrice": 217,
+            "scribingPrice": 236,
+            "groupPrice": null,
+            "activityPrice": 217,
+            "specificationRefinement": -1,
+            "activityNames": null,
+            "predefinedRuleAppDTO": {
+               "id": 1142,
+               "goodsExtendId": 468,
+               "predefinedDay": -1,
+               "predefinedLimitType": 1,
+               "predefinedLimitDay": 0,
+               "predefinedLimitTime": "23:59",
+               "orderNumberType": 1,
+               "orderNumberLess": 0,
+               "orderNumberMore": 0,
+               "purchaseType": 1,
+               "purchaseLimitPhone": "1",
+               "purchaseLimitDay": 0,
+               "purchaseLimitNumber": 0,
+               "purchaseLimitType": 1,
+               "realName": 1,
+               "extendShowPicture": null,
+               "extendThumbnail": null
+            },
+            "predefinedRuleDesc": null,
+            "refundRuleDTO": {
+               "id": 1154,
+               "goodsExtendId": 468,
+               "refundRuleType": 4,
+               "refundVerify": 2,
+               "refundDay": null,
+               "refundHour": null,
+               "refundMinute": null,
+               "refundCostType": 1,
+               "baseCharging": 0,
+               "baseChargingType": 1,
+               "beforePlayCharging": null,
+               "beforeChargingInfos": null,
+               "overdueType": 1
+            },
+            "refundRuleDesc": "随时退",
+            "validityVerificationDTO": {
+               "id": 1154,
+               "goodsExtendId": 468,
+               "validityType": 1,
+               "orderDay": null,
+               "ticketDay": null,
+               "beforeReserveDay": 0,
+               "afterReserveDay": 0,
+               "validityStartDate": "",
+               "validityEndDate": "",
+               "validityAfterReserve": 2,
+               "admissionRule": 1,
+               "delayVerificationType": 1,
+               "delayHour": null,
+               "delayMinutes": null
+            },
+            "validityVerificationDesc": "预定日期当天有效",
+            "predefinedInstructions": "WC挖而发愁v",
+            "refundExplanation": "阿斯蒂芬",
+            "goodsExtendPackageAppDTOS": null,
+            "showPicture": "http://tx.enn.cn/group1/M00/03/19/CiaAUl-9vJiAK3Q-AAE9m_XWHLo239.jpg",
+            "thumbnail": "http://tx.enn.cn/group1/M00/03/19/CiaAUl-9vJyAP_zBAAGlEUVAXCg289.jpg",
+            "roomArea": 23,
+            "bedType": 1,
+            "bedTypeName": "单人床",
+            "bedInfos": [
+               {
+                  "bedType": 1,
+                  "bedTypeName": "单人床",
+                  "bedWidth": "2",
+                  "bedNumber": 2
+               }
+            ],
+            "breakfastType": 1,
+            "breakfastNumber": null,
+            "breakfastTypeName": "无",
+            "stock": 23,
+            "canSale": true,
+            "couponNames": [],
+            "guideTime": null,
+            "extendShowPicture": null,
+            "extendThumbnail": null,
+            "scoreEvaluate": "5.0",
+            "totalEvaluate": null
+         }
+      ],
+      "details": [
+         {
+            "type": "content",
+            "value": "去娃呢输入多条梵音谷"
+         },
+         {
+            "type": "content",
+            "value": "青蛙二所忍冬藤"
+         }
+      ],
+      "priceDesc": "",
+      "method": "",
+      "note": "",
+      "evaluate": null,
+      "isVote": 1,
+      "longitude": "120.741556",
+      "latitude": "28.343006",
+      "goodsExtendIds": [
+         251,
+         467,
+         468
+      ],
+      "stayLevel": 6,
+      "discountCouponListDTO": {
+         "activityRuleDTOList": [],
+         "couponDTOList": []
+      },
+      "guideGender": null,
+      "guideAge": null,
+      "guideType": null,
+      "guideLanguage": null,
+      "guideLanguageLabel": null,
+      "guideLabel": null,
+      "scoreEvaluate": "5.0",
+      "totalEvaluate": 0,
+      "goodsLabel": null
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=5>酒店详情-推荐套餐列表-channel</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/goods-v1/applet/goods/detail/hotel/recommend/channel</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/goods-v1/applet/goods/detail/hotel/recommend/channel?goodsId=134&distributorMobile=</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "channelId": "9001",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:07 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": []
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=6>产品详情-推荐产品列表-channel</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/goods-v1/applet/goods/detail/recommend/channel</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/goods-v1/applet/goods/detail/recommend/channel?goodsId=134&latitude=globle.latitude&longitude=globle.longitude&distributorMobile=</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "channelId": "9001",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:07 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": [
+      {
+         "id": 247,
+         "thumbnail": "http://tx.enn.cn/group1/M00/02/F2/CiaAUl-OhraAanfSAACzwrr5OUg650.jpg",
+         "goodsName": "咖啡",
+         "goodsExtendName": null,
+         "projectId": 7,
+         "projectName": "",
+         "scenicId": 17,
+         "scenicName": "丽水古街",
+         "synopsis": "美食，咖啡",
+         "labels": null,
+         "activityNames": null,
+         "groupNames": null,
+         "price": 10.03,
+         "saleNumber": null,
+         "distance": null,
+         "poiId": 349,
+         "poiName": "丽水街乡村园林景区-349",
+         "longitude": null,
+         "latitude": null,
+         "activityType": null,
+         "generalizeImg": null,
+         "recommendImg": null,
+         "activityDescription": null,
+         "shareMethod": null,
+         "type": null,
+         "distributorPrice": null,
+         "groupPrice": null,
+         "activityPrice": null,
+         "marketPrice": null,
+         "showPrice": 10.03,
+         "scribingPrice": null,
+         "operationStartDate": "08:00",
+         "operationEndDate": "18:00",
+         "total": null,
+         "guideGender": null,
+         "guideAge": null,
+         "guideType": null,
+         "guideLanguage": null,
+         "guideLanguageLabel": null,
+         "guideLabel": null,
+         "scoreEvaluate": "5.0",
+         "totalEvaluate": 0,
+         "goodsLabel": null,
+         "subType": "1"
+      }
+   ]
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=7>获取评价列表</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1/applets/evaluate/list</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1/applets/evaluate/list</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "member_id": "1",
+   "Content-Type": "application/json"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "goodsId": 134,
+   "label": "",
+   "offset": 1,
+   "orderId": 0,
+   "pageSize": 10,
+   "scoreLevel": 0
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:07 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "records": [],
+      "offset": 1,
+      "pageSize": 10,
+      "favorableCommentsRate": 100,
+      "scoreLevel": [
+         {
+            "name": "全部",
+            "number": 0
+         },
+         {
+            "name": "好评",
+            "number": 0
+         },
+         {
+            "name": "中评",
+            "number": 0
+         },
+         {
+            "name": "差评",
+            "number": 0
+         }
+      ],
+      "labels": [],
+      "total": 0,
+      "label": {
+         "name": null,
+         "number": null
+      }
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=8>获取当前景区信息</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/cms-v1/applet/scenics/getNowScenicAreaInfo</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/cms-v1/applet/scenics/getNowScenicAreaInfo?lonLat=116.3506851196289%2C40.04253387451172</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:07 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "id": -1,
+      "name": "楠溪江",
+      "picUrl": null
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=9>获取商品预定须知</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/goods-v1/applet/goods/predefined/instructions</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/goods-v1/applet/goods/predefined/instructions?goodsExtendName=%E6%A0%87%E5%87%86%E9%97%B4&goodsId=134</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "channelId": "9001",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:07 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "goodsExtendName": "标准间",
+      "projectId": 3,
+      "projectName": "住宿",
+      "predefinedRuleAppDTO": {
+         "id": 933,
+         "goodsExtendId": 251,
+         "predefinedDay": -1,
+         "predefinedLimitType": 1,
+         "predefinedLimitDay": 0,
+         "predefinedLimitTime": "23:59",
+         "orderNumberType": 1,
+         "orderNumberLess": 0,
+         "orderNumberMore": 0,
+         "purchaseType": 1,
+         "purchaseLimitPhone": "1",
+         "purchaseLimitDay": 0,
+         "purchaseLimitNumber": 0,
+         "purchaseLimitType": 1,
+         "realName": 2,
+         "extendShowPicture": null,
+         "extendThumbnail": null
+      },
+      "predefinedRuleDesc": "当天可定",
+      "refundRuleDTO": {
+         "id": 937,
+         "goodsExtendId": 251,
+         "refundRuleType": 2,
+         "refundVerify": 1,
+         "refundDay": null,
+         "refundHour": null,
+         "refundMinute": null,
+         "refundCostType": 1,
+         "baseCharging": 0,
+         "baseChargingType": 1,
+         "beforePlayCharging": null,
+         "beforeChargingInfos": null,
+         "overdueType": 1
+      },
+      "refundRuleDesc": "有条件退",
+      "validityVerificationDTO": {
+         "id": 937,
+         "goodsExtendId": 251,
+         "validityType": 1,
+         "orderDay": null,
+         "ticketDay": null,
+         "beforeReserveDay": 0,
+         "afterReserveDay": 0,
+         "validityStartDate": "",
+         "validityEndDate": "",
+         "validityAfterReserve": 2,
+         "admissionRule": 1,
+         "delayVerificationType": 1,
+         "delayHour": null,
+         "delayMinutes": null
+      },
+      "validityVerificationDesc": "预定日期当天有效",
+      "predefinedInstructions": "撒旦法",
+      "refundExplanation": "挖二等分",
+      "pay": 2,
+      "secondSubmit": 1,
+      "secondSubmitHour": 0,
+      "secondSubmitMinute": 30
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=10>获取商品价格-住宿</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/goods-v1/applet/goods/extend/price/hotel</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/goods-v1/applet/goods/extend/price/hotel</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/x-www-form-urlencoded",
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "channelId": "9001",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>amount=1&goodsExtendName=%E6%A0%87%E5%87%86%E9%97%B4&goodsId=134&activityBaseId=&activityRuleId=&algorithms=&couponId=&distributorMobile=&endDate=2021-12-12&saleType=&startDate=2021-01-04%2000%3A00%3A00</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:07 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "goodsExtendId": 251,
+      "goodsName": "丽水街酒店",
+      "title": "标准间",
+      "couponName": null,
+      "saleAllPrice": 34507.8,
+      "price": 34507.8,
+      "reducePrice": 0,
+      "goodsHotelDetailDTOS": [
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月04日",
+            "useDate1": "2021-01-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月05日",
+            "useDate1": "2021-01-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月06日",
+            "useDate1": "2021-01-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月07日",
+            "useDate1": "2021-01-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月08日",
+            "useDate1": "2021-01-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月09日",
+            "useDate1": "2021-01-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月10日",
+            "useDate1": "2021-01-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月11日",
+            "useDate1": "2021-01-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月12日",
+            "useDate1": "2021-01-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月13日",
+            "useDate1": "2021-01-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月14日",
+            "useDate1": "2021-01-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月15日",
+            "useDate1": "2021-01-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月16日",
+            "useDate1": "2021-01-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月17日",
+            "useDate1": "2021-01-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月18日",
+            "useDate1": "2021-01-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月19日",
+            "useDate1": "2021-01-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月20日",
+            "useDate1": "2021-01-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月21日",
+            "useDate1": "2021-01-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月22日",
+            "useDate1": "2021-01-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月23日",
+            "useDate1": "2021-01-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月24日",
+            "useDate1": "2021-01-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月25日",
+            "useDate1": "2021-01-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月26日",
+            "useDate1": "2021-01-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月27日",
+            "useDate1": "2021-01-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月28日",
+            "useDate1": "2021-01-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月29日",
+            "useDate1": "2021-01-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月30日",
+            "useDate1": "2021-01-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月31日",
+            "useDate1": "2021-01-31"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月01日",
+            "useDate1": "2021-02-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月02日",
+            "useDate1": "2021-02-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月03日",
+            "useDate1": "2021-02-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月04日",
+            "useDate1": "2021-02-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月05日",
+            "useDate1": "2021-02-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月06日",
+            "useDate1": "2021-02-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月07日",
+            "useDate1": "2021-02-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月08日",
+            "useDate1": "2021-02-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月09日",
+            "useDate1": "2021-02-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月10日",
+            "useDate1": "2021-02-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月11日",
+            "useDate1": "2021-02-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月12日",
+            "useDate1": "2021-02-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月13日",
+            "useDate1": "2021-02-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月14日",
+            "useDate1": "2021-02-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月15日",
+            "useDate1": "2021-02-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月16日",
+            "useDate1": "2021-02-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月17日",
+            "useDate1": "2021-02-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月18日",
+            "useDate1": "2021-02-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月19日",
+            "useDate1": "2021-02-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月20日",
+            "useDate1": "2021-02-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月21日",
+            "useDate1": "2021-02-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月22日",
+            "useDate1": "2021-02-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月23日",
+            "useDate1": "2021-02-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月24日",
+            "useDate1": "2021-02-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月25日",
+            "useDate1": "2021-02-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月26日",
+            "useDate1": "2021-02-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月27日",
+            "useDate1": "2021-02-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年02月28日",
+            "useDate1": "2021-02-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月01日",
+            "useDate1": "2021-03-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月02日",
+            "useDate1": "2021-03-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月03日",
+            "useDate1": "2021-03-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月04日",
+            "useDate1": "2021-03-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月05日",
+            "useDate1": "2021-03-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月06日",
+            "useDate1": "2021-03-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月07日",
+            "useDate1": "2021-03-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月08日",
+            "useDate1": "2021-03-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月09日",
+            "useDate1": "2021-03-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月10日",
+            "useDate1": "2021-03-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月11日",
+            "useDate1": "2021-03-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月12日",
+            "useDate1": "2021-03-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月13日",
+            "useDate1": "2021-03-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月14日",
+            "useDate1": "2021-03-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月15日",
+            "useDate1": "2021-03-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月16日",
+            "useDate1": "2021-03-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月17日",
+            "useDate1": "2021-03-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月18日",
+            "useDate1": "2021-03-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月19日",
+            "useDate1": "2021-03-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月20日",
+            "useDate1": "2021-03-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月21日",
+            "useDate1": "2021-03-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月22日",
+            "useDate1": "2021-03-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月23日",
+            "useDate1": "2021-03-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月24日",
+            "useDate1": "2021-03-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月25日",
+            "useDate1": "2021-03-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月26日",
+            "useDate1": "2021-03-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月27日",
+            "useDate1": "2021-03-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月28日",
+            "useDate1": "2021-03-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月29日",
+            "useDate1": "2021-03-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月30日",
+            "useDate1": "2021-03-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年03月31日",
+            "useDate1": "2021-03-31"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月01日",
+            "useDate1": "2021-04-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月02日",
+            "useDate1": "2021-04-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月03日",
+            "useDate1": "2021-04-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月04日",
+            "useDate1": "2021-04-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月05日",
+            "useDate1": "2021-04-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月06日",
+            "useDate1": "2021-04-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月07日",
+            "useDate1": "2021-04-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月08日",
+            "useDate1": "2021-04-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月09日",
+            "useDate1": "2021-04-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月10日",
+            "useDate1": "2021-04-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月11日",
+            "useDate1": "2021-04-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月12日",
+            "useDate1": "2021-04-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月13日",
+            "useDate1": "2021-04-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月14日",
+            "useDate1": "2021-04-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月15日",
+            "useDate1": "2021-04-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月16日",
+            "useDate1": "2021-04-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月17日",
+            "useDate1": "2021-04-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月18日",
+            "useDate1": "2021-04-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月19日",
+            "useDate1": "2021-04-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月20日",
+            "useDate1": "2021-04-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月21日",
+            "useDate1": "2021-04-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月22日",
+            "useDate1": "2021-04-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月23日",
+            "useDate1": "2021-04-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月24日",
+            "useDate1": "2021-04-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月25日",
+            "useDate1": "2021-04-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月26日",
+            "useDate1": "2021-04-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月27日",
+            "useDate1": "2021-04-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月28日",
+            "useDate1": "2021-04-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月29日",
+            "useDate1": "2021-04-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年04月30日",
+            "useDate1": "2021-04-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月01日",
+            "useDate1": "2021-05-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月02日",
+            "useDate1": "2021-05-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月03日",
+            "useDate1": "2021-05-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月04日",
+            "useDate1": "2021-05-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月05日",
+            "useDate1": "2021-05-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月06日",
+            "useDate1": "2021-05-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月07日",
+            "useDate1": "2021-05-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月08日",
+            "useDate1": "2021-05-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月09日",
+            "useDate1": "2021-05-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月10日",
+            "useDate1": "2021-05-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月11日",
+            "useDate1": "2021-05-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月12日",
+            "useDate1": "2021-05-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月13日",
+            "useDate1": "2021-05-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月14日",
+            "useDate1": "2021-05-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月15日",
+            "useDate1": "2021-05-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月16日",
+            "useDate1": "2021-05-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月17日",
+            "useDate1": "2021-05-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月18日",
+            "useDate1": "2021-05-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月19日",
+            "useDate1": "2021-05-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月20日",
+            "useDate1": "2021-05-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月21日",
+            "useDate1": "2021-05-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月22日",
+            "useDate1": "2021-05-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月23日",
+            "useDate1": "2021-05-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月24日",
+            "useDate1": "2021-05-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月25日",
+            "useDate1": "2021-05-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月26日",
+            "useDate1": "2021-05-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月27日",
+            "useDate1": "2021-05-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月28日",
+            "useDate1": "2021-05-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月29日",
+            "useDate1": "2021-05-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月30日",
+            "useDate1": "2021-05-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年05月31日",
+            "useDate1": "2021-05-31"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月01日",
+            "useDate1": "2021-06-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月02日",
+            "useDate1": "2021-06-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月03日",
+            "useDate1": "2021-06-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月04日",
+            "useDate1": "2021-06-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月05日",
+            "useDate1": "2021-06-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月06日",
+            "useDate1": "2021-06-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月07日",
+            "useDate1": "2021-06-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月08日",
+            "useDate1": "2021-06-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月09日",
+            "useDate1": "2021-06-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月10日",
+            "useDate1": "2021-06-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月11日",
+            "useDate1": "2021-06-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月12日",
+            "useDate1": "2021-06-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月13日",
+            "useDate1": "2021-06-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月14日",
+            "useDate1": "2021-06-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月15日",
+            "useDate1": "2021-06-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月16日",
+            "useDate1": "2021-06-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月17日",
+            "useDate1": "2021-06-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月18日",
+            "useDate1": "2021-06-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月19日",
+            "useDate1": "2021-06-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月20日",
+            "useDate1": "2021-06-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月21日",
+            "useDate1": "2021-06-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月22日",
+            "useDate1": "2021-06-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月23日",
+            "useDate1": "2021-06-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月24日",
+            "useDate1": "2021-06-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月25日",
+            "useDate1": "2021-06-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月26日",
+            "useDate1": "2021-06-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月27日",
+            "useDate1": "2021-06-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月28日",
+            "useDate1": "2021-06-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月29日",
+            "useDate1": "2021-06-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年06月30日",
+            "useDate1": "2021-06-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月01日",
+            "useDate1": "2021-07-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月02日",
+            "useDate1": "2021-07-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月03日",
+            "useDate1": "2021-07-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月04日",
+            "useDate1": "2021-07-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月05日",
+            "useDate1": "2021-07-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月06日",
+            "useDate1": "2021-07-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月07日",
+            "useDate1": "2021-07-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月08日",
+            "useDate1": "2021-07-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月09日",
+            "useDate1": "2021-07-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月10日",
+            "useDate1": "2021-07-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月11日",
+            "useDate1": "2021-07-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月12日",
+            "useDate1": "2021-07-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月13日",
+            "useDate1": "2021-07-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月14日",
+            "useDate1": "2021-07-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月15日",
+            "useDate1": "2021-07-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月16日",
+            "useDate1": "2021-07-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月17日",
+            "useDate1": "2021-07-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月18日",
+            "useDate1": "2021-07-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月19日",
+            "useDate1": "2021-07-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月20日",
+            "useDate1": "2021-07-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月21日",
+            "useDate1": "2021-07-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月22日",
+            "useDate1": "2021-07-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月23日",
+            "useDate1": "2021-07-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月24日",
+            "useDate1": "2021-07-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月25日",
+            "useDate1": "2021-07-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月26日",
+            "useDate1": "2021-07-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月27日",
+            "useDate1": "2021-07-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月28日",
+            "useDate1": "2021-07-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月29日",
+            "useDate1": "2021-07-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月30日",
+            "useDate1": "2021-07-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年07月31日",
+            "useDate1": "2021-07-31"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月01日",
+            "useDate1": "2021-08-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月02日",
+            "useDate1": "2021-08-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月03日",
+            "useDate1": "2021-08-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月04日",
+            "useDate1": "2021-08-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月05日",
+            "useDate1": "2021-08-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月06日",
+            "useDate1": "2021-08-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月07日",
+            "useDate1": "2021-08-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月08日",
+            "useDate1": "2021-08-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月09日",
+            "useDate1": "2021-08-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月10日",
+            "useDate1": "2021-08-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月11日",
+            "useDate1": "2021-08-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月12日",
+            "useDate1": "2021-08-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月13日",
+            "useDate1": "2021-08-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月14日",
+            "useDate1": "2021-08-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月15日",
+            "useDate1": "2021-08-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月16日",
+            "useDate1": "2021-08-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月17日",
+            "useDate1": "2021-08-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月18日",
+            "useDate1": "2021-08-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月19日",
+            "useDate1": "2021-08-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月20日",
+            "useDate1": "2021-08-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月21日",
+            "useDate1": "2021-08-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月22日",
+            "useDate1": "2021-08-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月23日",
+            "useDate1": "2021-08-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月24日",
+            "useDate1": "2021-08-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月25日",
+            "useDate1": "2021-08-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月26日",
+            "useDate1": "2021-08-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月27日",
+            "useDate1": "2021-08-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月28日",
+            "useDate1": "2021-08-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月29日",
+            "useDate1": "2021-08-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月30日",
+            "useDate1": "2021-08-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年08月31日",
+            "useDate1": "2021-08-31"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月01日",
+            "useDate1": "2021-09-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月02日",
+            "useDate1": "2021-09-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月03日",
+            "useDate1": "2021-09-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月04日",
+            "useDate1": "2021-09-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月05日",
+            "useDate1": "2021-09-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月06日",
+            "useDate1": "2021-09-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月07日",
+            "useDate1": "2021-09-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月08日",
+            "useDate1": "2021-09-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月09日",
+            "useDate1": "2021-09-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月10日",
+            "useDate1": "2021-09-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月11日",
+            "useDate1": "2021-09-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月12日",
+            "useDate1": "2021-09-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月13日",
+            "useDate1": "2021-09-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月14日",
+            "useDate1": "2021-09-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月15日",
+            "useDate1": "2021-09-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月16日",
+            "useDate1": "2021-09-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月17日",
+            "useDate1": "2021-09-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月18日",
+            "useDate1": "2021-09-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月19日",
+            "useDate1": "2021-09-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月20日",
+            "useDate1": "2021-09-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月21日",
+            "useDate1": "2021-09-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月22日",
+            "useDate1": "2021-09-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月23日",
+            "useDate1": "2021-09-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月24日",
+            "useDate1": "2021-09-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月25日",
+            "useDate1": "2021-09-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月26日",
+            "useDate1": "2021-09-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月27日",
+            "useDate1": "2021-09-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月28日",
+            "useDate1": "2021-09-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月29日",
+            "useDate1": "2021-09-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年09月30日",
+            "useDate1": "2021-09-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月01日",
+            "useDate1": "2021-10-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月02日",
+            "useDate1": "2021-10-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月03日",
+            "useDate1": "2021-10-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月04日",
+            "useDate1": "2021-10-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月05日",
+            "useDate1": "2021-10-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月06日",
+            "useDate1": "2021-10-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月07日",
+            "useDate1": "2021-10-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月08日",
+            "useDate1": "2021-10-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月09日",
+            "useDate1": "2021-10-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月10日",
+            "useDate1": "2021-10-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月11日",
+            "useDate1": "2021-10-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月12日",
+            "useDate1": "2021-10-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月13日",
+            "useDate1": "2021-10-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月14日",
+            "useDate1": "2021-10-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月15日",
+            "useDate1": "2021-10-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月16日",
+            "useDate1": "2021-10-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月17日",
+            "useDate1": "2021-10-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月18日",
+            "useDate1": "2021-10-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月19日",
+            "useDate1": "2021-10-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月20日",
+            "useDate1": "2021-10-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月21日",
+            "useDate1": "2021-10-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月22日",
+            "useDate1": "2021-10-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月23日",
+            "useDate1": "2021-10-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月24日",
+            "useDate1": "2021-10-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月25日",
+            "useDate1": "2021-10-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月26日",
+            "useDate1": "2021-10-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月27日",
+            "useDate1": "2021-10-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月28日",
+            "useDate1": "2021-10-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月29日",
+            "useDate1": "2021-10-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月30日",
+            "useDate1": "2021-10-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年10月31日",
+            "useDate1": "2021-10-31"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月01日",
+            "useDate1": "2021-11-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月02日",
+            "useDate1": "2021-11-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月03日",
+            "useDate1": "2021-11-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月04日",
+            "useDate1": "2021-11-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月05日",
+            "useDate1": "2021-11-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月06日",
+            "useDate1": "2021-11-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月07日",
+            "useDate1": "2021-11-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月08日",
+            "useDate1": "2021-11-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月09日",
+            "useDate1": "2021-11-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月10日",
+            "useDate1": "2021-11-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月11日",
+            "useDate1": "2021-11-11"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月12日",
+            "useDate1": "2021-11-12"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月13日",
+            "useDate1": "2021-11-13"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月14日",
+            "useDate1": "2021-11-14"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月15日",
+            "useDate1": "2021-11-15"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月16日",
+            "useDate1": "2021-11-16"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月17日",
+            "useDate1": "2021-11-17"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月18日",
+            "useDate1": "2021-11-18"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月19日",
+            "useDate1": "2021-11-19"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月20日",
+            "useDate1": "2021-11-20"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月21日",
+            "useDate1": "2021-11-21"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月22日",
+            "useDate1": "2021-11-22"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月23日",
+            "useDate1": "2021-11-23"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月24日",
+            "useDate1": "2021-11-24"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月25日",
+            "useDate1": "2021-11-25"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月26日",
+            "useDate1": "2021-11-26"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月27日",
+            "useDate1": "2021-11-27"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月28日",
+            "useDate1": "2021-11-28"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月29日",
+            "useDate1": "2021-11-29"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年11月30日",
+            "useDate1": "2021-11-30"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月01日",
+            "useDate1": "2021-12-01"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月02日",
+            "useDate1": "2021-12-02"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月03日",
+            "useDate1": "2021-12-03"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月04日",
+            "useDate1": "2021-12-04"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月05日",
+            "useDate1": "2021-12-05"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月06日",
+            "useDate1": "2021-12-06"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月07日",
+            "useDate1": "2021-12-07"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月08日",
+            "useDate1": "2021-12-08"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月09日",
+            "useDate1": "2021-12-09"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月10日",
+            "useDate1": "2021-12-10"
+         },
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年12月11日",
+            "useDate1": "2021-12-11"
+         }
+      ]
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=11>根据产品id查询是否有优惠或电子券</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/promotions-v1/applets/activity/use/list/size</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/promotions-v1/applets/activity/use/list/size</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/json",
+   "company_id": "1",
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "amount": 0,
+   "goodsExtendId": 251,
+   "leaveDate": "2021-01-05",
+   "phone": "",
+   "status": 0,
+   "useTime": "2021-01-04 00:00:00"
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:08 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": false
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=12>获取商品预定规则</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/goods-v1/applet/goods/predefined</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/goods-v1/applet/goods/predefined?goodsExtendName=%E6%A0%87%E5%87%86%E9%97%B4&goodsId=134</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "channelId": "9001",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:08 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "id": 933,
+      "goodsExtendId": 251,
+      "predefinedDay": -1,
+      "predefinedLimitType": 1,
+      "predefinedLimitDay": 0,
+      "predefinedLimitTime": "23:59",
+      "orderNumberType": 1,
+      "orderNumberLess": 0,
+      "orderNumberMore": 0,
+      "purchaseType": 1,
+      "purchaseLimitPhone": "1",
+      "purchaseLimitDay": 0,
+      "purchaseLimitNumber": 0,
+      "purchaseLimitType": 1,
+      "realName": 2,
+      "extendShowPicture": null,
+      "extendThumbnail": null
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=13>新增会员的出行人信息</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/member-v1/member/contact/add</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/member-v1/member/contact/add</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/json",
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "company_id": "1"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "id": null,
+   "idCard": "211322199406241273",
+   "name": "龙龙",
+   "phoneNum": "18301072530",
+   "ticketType": "",
+   "ticketTypeDesc": ""
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:08 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": 542
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=14>/查询用户的以往出行人列表</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/member-v1/member/contact/list</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/member-v1/member/contact/list</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "company_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:08 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": [
+      {
+         "id": 542,
+         "memberId": 4831080,
+         "name": "龙龙",
+         "idCard": "211322199406241273",
+         "phoneNum": "18301072530",
+         "createTime": null,
+         "updateTime": null,
+         "companyId": 1,
+         "creatorId": null,
+         "creatorName": null,
+         "ticketType": "161",
+         "ticketTypeDesc": "成人",
+         "goodsId": null,
+         "goodsExtendName": null
+      }
+   ]
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=15>酒店下单接口</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1/order/create/hotel</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1/order/create/hotel</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/json",
+   "member_id": "1",
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "company_id": "1"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "certificateNo": "211322199406241273",
+   "certificateType": 1,
+   "channelId": 1,
+   "channelName": "123",
+   "customerName": "樊云龙",
+   "extraInformation": {
+      "useDate": "2021-01-04"
+   },
+   "goodsInfoParamList": [
+      {
+         "customerId": 542,
+         "saleId": "",
+         "amount": 1,
+         "skuId": 251
+      }
+   ],
+   "memberId": 1,
+   "orderSource": 1,
+   "phone": "13341192580",
+   "threeOrderNo": "",
+   "distributorMobile": "",
+   "comeDate": "2021-01-04",
+   "leaveDate": "2021-01-05",
+   "distributorPhone": "",
+   "homeNum": 1,
+   "saleType": "",
+   "algorithms": "",
+   "activityRuleId": "",
+   "activityBaseId": ""
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:08 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": 1010310002729801
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=16>获取商品价格-住宿获取价格</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/goods-v1/applet/goods/extend/price/hotel</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/goods-v1/applet/goods/extend/price/hotel</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/x-www-form-urlencoded",
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "channelId": "9001",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>amount=1&goodsExtendName=%E6%A0%87%E5%87%86%E9%97%B4&goodsId=134&activityBaseId=&activityRuleId=&algorithms=&couponId=&distributorMobile=&endDate=2021-01-05&saleType=&startDate=2021-01-04%2000%3A00%3A00</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:09 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "goodsExtendId": 251,
+      "goodsName": "丽水街酒店",
+      "title": "标准间",
+      "couponName": null,
+      "saleAllPrice": 100.9,
+      "price": 100.9,
+      "reducePrice": 0,
+      "goodsHotelDetailDTOS": [
+         {
+            "salePrice": 100.9,
+            "amount": 1,
+            "useDate": "2021年01月04日",
+            "useDate1": "2021-01-04"
+         }
+      ]
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=17>快捷支付</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1/order/pay</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1/order/pay</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/json",
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "orderId": 1010310002729801
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:09 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "timeStamp": "1609755249",
+      "package": "prepay_id=null",
+      "paySign": "EA5B723DC41684B2C4784E68DD99BB76",
+      "orderId": "1010310002729801",
+      "appId": "wx17727d2732e03351",
+      "signType": "MD5",
+      "prepayId": "null",
+      "nonceStr": "1609755249183",
+      "memberId": "1"
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=18>微信支付成功回调</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1/pay/freeApi/test/callback</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1/pay/freeApi/test/callback?orderId=1010310002729801&transactionId=1010310002729801&totalFee=100.9</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:09 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": 0
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=19>刷新当前用户在线</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/member-v1/member/refresh-open</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/member-v1/member/refresh-open?openId=111</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "company_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:09 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": "刷新成功"
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=20>applet订单详情</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1/refactor/applet/order/info</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1/refactor/applet/order/info?orderId=1010310002729801</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:10 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "id": 11707,
+      "orderId": 1010310002729801,
+      "goodsType": "3",
+      "createTime": "2021/01/04 18:14:09",
+      "updateTime": "2021/01/04 18:14:09",
+      "payTime": "2021-01-04 18:14:09",
+      "linkman": "樊云龙",
+      "linkmanPhone": "13341192580",
+      "userLevel": 0,
+      "goodsName": null,
+      "orderStatus": 20,
+      "totalPay": 100.9,
+      "realPay": 100.9,
+      "hadPay": 100.9,
+      "paySource": null,
+      "activityId": 0,
+      "couponId": 0,
+      "reducedPay": 0,
+      "voucherPay": 0,
+      "couponCode": "",
+      "activityName": "",
+      "channelNo": "1010310002729801",
+      "orderNo": "HT1010310002729801",
+      "orderClient": 1,
+      "distributorId": 0,
+      "distributorName": null,
+      "distributorPhone": "",
+      "isDistributor": 2,
+      "platform": 0,
+      "chargeName": null,
+      "tradeNo": "1010310002729801",
+      "orderName": "丽水街酒店",
+      "amount": 1,
+      "servicePhone": "18211051922",
+      "cancelDuration": 2,
+      "qrImg": "data:image/jpeg;base64,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",
+      "payWay": 1,
+      "skuId": 251,
+      "skuName": "标准间",
+      "refundStatus": null,
+      "thirdOrderNo": "",
+      "isShipChange": 1,
+      "isShipUpgrade": 1,
+      "subType": "1",
+      "quantity": 1,
+      "goodsInfo": null,
+      "appletOrderNodeOperateDTO": {
+         "orderId": 1010310002729801,
+         "userPay": 0,
+         "userCancel": 1
+      },
+      "isFollow": 1,
+      "seatRatio": null,
+      "appletOrderItemInfoDTOS": [
+         {
+            "id": 11934,
+            "orderId": 1010310002729801,
+            "goodsName": "丽水街酒店",
+            "skuName": "标准间",
+            "quantity": 1,
+            "beginDate": "2021-01-04",
+            "useDate": "2021-01-04",
+            "endDate": "2021-01-05",
+            "supplierId": 60,
+            "refundPay": 0,
+            "supplierName": "zhaoyuying",
+            "scenicName": "丽水古街",
+            "goodsType": 3,
+            "refundRule": "{\"baseCharging\":0.0,\"baseChargingType\":1,\"beforeChargingInfos\":[],\"goodsExtendId\":251,\"id\":937,\"overdueType\":1,\"refundCostType\":1,\"refundRuleType\":2,\"refundVerify\":1}",
+            "thumbnail": "http://tx.enn.cn/group1/M00/02/7D/CiaAUl889O6AA6D-AAGmcNcQ0II58.jpeg",
+            "days": 1,
+            "totalPay": 100.9,
+            "settlePrice": 0.01,
+            "qrImg": "data:image/jpeg;base64,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",
+            "area": null,
+            "time": null,
+            "ticketType": null,
+            "isReal": null,
+            "goodsId": 134,
+            "issueType": 0,
+            "basePrice": 100.9,
+            "thirdParty": 0,
+            "runStartDate": "08:00",
+            "runEndDate": "18:00",
+            "ext": "",
+            "gatherTime": "08:00",
+            "appletOrderGoodsInfoDTOS": [
+               {
+                  "id": 2007,
+                  "orderId": 1010310002729801,
+                  "goodsId": 134,
+                  "goodsType": 3,
+                  "realName": "龙龙",
+                  "mobile": "18301072530",
+                  "idNo": "211322199406241273",
+                  "ticketNo": null,
+                  "lastTime": null,
+                  "bizStatus": 20,
+                  "thirdTicketNo": null,
+                  "qrImg": "data:image/jpeg;base64,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",
+                  "ticketType": null,
+                  "ticketPrice": null,
+                  "babyInfo": null,
+                  "seatNumber": null,
+                  "thirdThicketVoucherCode": null,
+                  "thirdOrderNo": null,
+                  "issueType": null,
+                  "version": 1,
+                  "bookTrafficId": null,
+                  "cardType": null,
+                  "qrCode": null,
+                  "busCardNo": null,
+                  "busCardStatus": null,
+                  "effectiveDate": null,
+                  "usedDate": null,
+                  "refundDate": null,
+                  "residueNumber": null,
+                  "sumNumber": null,
+                  "collectionName": null
+               }
+            ]
+         }
+      ],
+      "clStatus": null
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=21>获取商品退改规则-是否可退-new</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1/goods-order/refund/new</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1/goods-order/refund/new?orderId=1010310002729801</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:11 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "code": true,
+      "message": "该商品可退"
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=22>根据订单类型返回反馈内容</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/cms-v1/applet/order/qa/cause/list</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/cms-v1/applet/order/qa/cause/list?id=3</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "company_id": "1",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:11 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": [
+      {
+         "value": "同行老人超龄",
+         "key": 1
+      },
+      {
+         "value": "因排期问题导致",
+         "key": 2
+      },
+      {
+         "value": "因天气原因延误行程",
+         "key": 3
+      },
+      {
+         "value": "其它",
+         "key": 4
+      }
+   ]
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=23>手机密码登录</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/authority-v1/freeApi/sys/phoneLogin</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">https://genius.enn.cn/ssop/api/authority-v1/freeApi/sys/phoneLogin</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/json",
+   "token": "111111",
+   "X-TOKEN": "111111"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "captcha": "111111",
+   "password": "123456",
+   "username": "15541699999",
+   "uuid": "uuid"
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:11 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "data": {
+      "companyId": 1,
+      "supplierId": 0,
+      "headImg": "",
+      "distributeId": 0,
+      "phone": "15541699999",
+      "nickName": "龙",
+      "expire": 604800,
+      "name": "15541699999",
+      "id": 3072,
+      "avatar": "",
+      "sysRoles": [
+         {
+            "roleId": 2,
+            "roleName": "景区管理员",
+            "remark": "租户下景区管理员",
+            "createUserId": 1,
+            "menuIdList": null,
+            "createTime": "2020-05-01 12:24:14",
+            "companyId": 0
+         },
+         {
+            "roleId": 4,
+            "roleName": "运营人员",
+            "remark": "租户下运营人员",
+            "createUserId": 1,
+            "menuIdList": null,
+            "createTime": "2020-05-01 12:25:38",
+            "companyId": 0
+         },
+         {
+            "roleId": 13,
+            "roleName": "项目运营人员",
+            "remark": "",
+            "createUserId": 1,
+            "menuIdList": null,
+            "createTime": "2020-05-07 16:01:17",
+            "companyId": 1
+         },
+         {
+            "roleId": 14,
+            "roleName": "景区租户",
+            "remark": "",
+            "createUserId": 2,
+            "menuIdList": null,
+            "createTime": "2020-06-06 13:16:25",
+            "companyId": 1
+         }
+      ],
+      "token": "cc01d33795cbe679a097c978216895a4"
+   },
+   "message": "success"
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=24>App订单详情</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1/refactor/app/order/info</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1/refactor/app/order/info?orderId=1010310002729801&itemId=</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "X-TOKEN": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlbm5fc3NvcCIsInN1YiI6Im9KY2M3NWlCTmpYZFRBd3BoYW50VTljYXFRUXciLCJhdWQiOiI0ODMxMDgwIiwiaWF0IjoxNjA5NzU1MjQyLCJleHAiOjE2MTY5NTUyNDJ9.U_XaOR3aA88Ks8KhzUo-Sq3X6411UjR_mgZL5pApXJ-6EZDiV88919XVlZsACNH0I0YSptajEIVHYL7qmKOzGA",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:11 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "SUCCESS",
+   "data": {
+      "amount": 1,
+      "createTime": "2021/01/04 18:14:09",
+      "distributorName": null,
+      "distributorPhone": "",
+      "goodsType": "3",
+      "orderSource": 10,
+      "qrImg": "data:image/jpeg;base64,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",
+      "hadPay": 100.9,
+      "id": 11707,
+      "isDistributor": 2,
+      "linkman": "樊云龙",
+      "linkmanPhone": "13341192580",
+      "orderClient": 1,
+      "orderId": 1010310002729801,
+      "goodsName": "丽水街酒店",
+      "skuName": "标准间",
+      "orderNo": "HT1010310002729801",
+      "orderStatus": 20,
+      "payWay": 1,
+      "platform": null,
+      "realPay": 100.9,
+      "totalPay": 100.9,
+      "goodsTimeSegment": null,
+      "couponName": "",
+      "reducedMoney": null,
+      "goodsPrice": "100.90",
+      "subType": "1",
+      "quantity": 1,
+      "checkMethod": 1,
+      "managerName": "",
+      "appOrderNodeOperateDTO": {
+         "orderId": 1010310002729801,
+         "hotelBeforeConfirm": 0,
+         "hotelConfirm": 0,
+         "productCharge": 1,
+         "hotelLeave": 0,
+         "hotelCancel": 1,
+         "appRefund": 0,
+         "firstCheck": 0,
+         "financeCheck": 0
+      },
+      "appOrderItemInfoDTOS": [
+         {
+            "beginDate": "2021-01-04 00:00:00",
+            "days": 1,
+            "endDate": "2021-01-05 23:59:59",
+            "goodsName": "丽水街酒店",
+            "goodsType": 3,
+            "orderStatus": 20,
+            "id": 11934,
+            "orderId": 1010310002729801,
+            "quantity": 1,
+            "scenicName": "丽水古街",
+            "skuName": "标准间",
+            "isReal": null,
+            "salePrice": 100.9,
+            "settlePrice": 0.01,
+            "chargeName": null,
+            "operateTime": null,
+            "issueType": 0,
+            "thirdParty": 0,
+            "appOrderGoodsInfoDTOS": [
+               {
+                  "bizStatus": 20,
+                  "realName": "龙龙",
+                  "thirdTicketNo": null,
+                  "ticketNo": null,
+                  "idNo": "211322199406241273"
+               }
+            ],
+            "confirmTimeoutTime": "2021-01-04 18:45:09",
+            "gatherTime": "08:00"
+         }
+      ]
+   }
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=25>整单核销</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1//charge/whole</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1//charge/whole</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/json",
+   "member_id": "1",
+   "token": "cc01d33795cbe679a097c978216895a4"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "clientId": 1,
+   "itemId": 11934,
+   "managerId": 3072,
+   "orderId": 1010310002729801,
+   "supplierId": 0
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:12 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "",
+   "data": null
+}</pre>
+  </div>
+ </div></div>
+  <div>
+    <h2 id=26>酒店操作确认 1-房源确认 2-确认入住 3-确认离店</h2>
+    <h3>基本信息</h3>
+    <div class="row case-report">
+    <div class="col-3 case-report-title">Path</div>
+    <div class="col-21">/ssop/api/order-v1/hotel/flow/operate</div>
+   </div>
+   <div class="row case-report">
+    <div class="col-3 case-report-title">Status</div>
+    <div class="col-21">200</div>
+   </div>
+  </div>
+  
+  <div>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">验证结果</div>
+     <div class="col-21">
+      <div key=0>验证通过</div>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <h3>Request</h3>
+    <div class="row case-report">
+     <div class="col-3 case-report-title">Url</div>
+     <div class="col-21">http://genius.enn.cn/ssop/api/order-v1/hotel/flow/operate</div>
+    </div><div class="row case-report">
+    <div class="col-3 case-report-title">Headers</div>
+    <div class="col-21">
+     <pre>{
+   "Content-Type": "application/json",
+   "token": "cc01d33795cbe679a097c978216895a4",
+   "member_id": "1"
+}</pre>
+    </div>
+   </div> <div class="row case-report">
+   <div class="col-3 case-report-title">Body</div>
+   <div class="col-21">
+    <pre>{
+   "action": 1,
+   "clientId": 1,
+   "itemId": 11934,
+   "orderId": 1010310002729801,
+   "supplierId": 0,
+   "type": 3
+}</pre>
+   </div>
+   </div></div><div><h3>Reponse</h3>
+  <div class="row case-report">
+   <div class="col-3 case-report-title">Headers</div>
+   <div class="col-21">
+    <pre>{
+   "server": "nginx/1.18.0",
+   "date": "Mon, 04 Jan 2021 10:14:12 GMT",
+   "content-type": "application/json;charset=UTF-8",
+   "transfer-encoding": "chunked",
+   "connection": "close"
+}</pre>
+   </div>
+  </div> <div class="row case-report">
+  <div class="col-3 case-report-title">Body</div>
+  <div class="col-21">
+   <pre>{
+   "code": 0,
+   "message": "",
+   "data": true
+}</pre>
+  </div>
+ </div></div>
+        <footer class="m-footer">
+          <p>Build by <a href="https://ymfe.org/">YMFE</a>.</p>
+        </footer>
+      </div>
+    </div>
+  </body>
+  </html>
+  

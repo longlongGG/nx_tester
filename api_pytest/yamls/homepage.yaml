@@ -1,0 +1,13 @@
+-
+  name: 首页
+  api_request:
+    url: http://genius.enn.cn/ssop/api/member-v1/member/refresh-open
+    headers:
+      X-TOKEN:
+      company_id:
+    method: get
+    params:
+      openId: 11111
+  api_validate:
+    - eq: {code: 200}
+
