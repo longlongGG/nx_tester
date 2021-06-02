@@ -12,6 +12,8 @@ from urllib.parse import quote
 import math
 from flask import Flask, render_template, request, flash, session, redirect,jsonify
 from flask_sqlalchemy import SQLAlchemy
+
+from common.dingding_send_message import send_msg
 from common.request_yapi import Request_Yapi
 import requests, re, sys
 import pymysql
@@ -86,6 +88,7 @@ def auth(func):
 @auth
 def index():
     return render_template('index.html',username = session.get('user'))
+
 
 '''
 登出
@@ -291,12 +294,17 @@ def full_implement():
 '''
 @app.route('/pass_rate',methods=['POST','GET'])
 def pass_rate():
+    cat = request.args.get("cat")
     id =  request.args.get("id")
     if id:
         json_data = Apicase.query.filter_by(api_id = id).all()
         for ds in json_data:
             api_name = ds.api_name
         yapi_data = Request_Yapi.request_url_data(json_data)
+        print(yapi_data[0]['msg'])
+        print(cat)
+        if cat == '1':
+            send_msg(yapi_data[0]['msg']+'详细测试报告地址：http://127.0.0.1:5000/pass_rate?id='+id)
         return render_template('api-report.html',yapi_data = yapi_data,api_name = api_name)
     else:
         return render_template('api-report.html')
@@ -305,10 +313,10 @@ def pass_rate():
 '''
 消息发送
 '''
-@app.route('/send_message',methods=['POST','GET'])
-def send_message():
-
-    return render_template('admin-cate.html')
+# @app.route('/send_message',methods=['POST','GET'])
+# def send_message():
+#
+#     return render_template('admin-cate.html')
 
 
 @app.route('/admin_cate',methods=['POST','GET'])
@@ -320,6 +328,9 @@ def admin_cate():
 @app.route('/welcome',methods=['POST','GET'])
 def welcome():
     return render_template('welcome.html')
+
+
+
 
 
 if __name__ == '__main__':
