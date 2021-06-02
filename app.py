@@ -304,7 +304,7 @@ def pass_rate():
         print(yapi_data[0]['msg'])
         print(cat)
         if cat == '1':
-            send_msg(yapi_data[0]['msg']+'详细测试报告地址：http://127.0.0.1:5000/pass_rate?id='+id)
+            send_msg(yapi_data[0]['msg']+ '通过率：'+ str(yapi_data[0]['successNum']/yapi_data[0]['len']*100)[:4]+'%' + '\n详细测试报告地址：http://127.0.0.1:5000/pass_rate?id='+id)
         return render_template('api-report.html',yapi_data = yapi_data,api_name = api_name)
     else:
         return render_template('api-report.html')
